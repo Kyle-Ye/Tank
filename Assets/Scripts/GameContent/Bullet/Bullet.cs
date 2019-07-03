@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
 
 	[SerializeField]
@@ -12,9 +12,9 @@ public abstract class Bullet : MonoBehaviour
 
 	private Rigidbody m_rigidbody;
 	private GameObject damageSource;
-	private int damage;
+	private float damage;
 
-	public static void Emmision(GameObject bullet, GameObject tank, int damage)
+	public static void Emmision(GameObject bullet, GameObject tank, float damage)
 	{
 		if(!bullet.CompareTag("Bullet"))
 		{
@@ -64,7 +64,7 @@ public abstract class Bullet : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{
-		
+		GameObject[] tanks = GameObject.FindGameObjectsWithTag("Tank");
 	}
 
 

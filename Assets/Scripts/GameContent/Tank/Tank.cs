@@ -46,6 +46,10 @@ public class Tank : MonoBehaviour
 	[Header("炮弹发射冷却时间")]
 	private float attackCD = 3.0f;
 
+	[SerializeField]
+	[Header("炮弹")]
+	private GameObject bullet;
+
 	#endregion
 
 	#region 私有属性
@@ -70,7 +74,11 @@ public class Tank : MonoBehaviour
 
 	public void Start()
 	{
-
+		if (!bullet.CompareTag("Bullet"))
+		{
+			Debug.LogError("BulletObject不是一个合法的Bullet");
+			return;
+		}
 	}
 
 	public void Update()
@@ -136,7 +144,7 @@ public class Tank : MonoBehaviour
 	}
 
 	//坦克受到攻击
-	public void Damage(int damage)
+	public void Damage(float damage)
 	{
 		//Caculate random damage scale
 		float damageScale = Random.Range(-1.0f, 1.0f);
@@ -160,6 +168,7 @@ public class Tank : MonoBehaviour
 		}
 
 		//Aenerate attack
+		Bullet.Emmision(bullet, gameObject, damage);
 	}
 
 
