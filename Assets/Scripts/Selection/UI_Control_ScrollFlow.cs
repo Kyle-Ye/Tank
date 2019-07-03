@@ -99,29 +99,6 @@ public class UI_Control_ScrollFlow : MonoBehaviour, IBeginDragHandler, IDragHand
         Check(v);
     }
     
-    //public void OnClick()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.D))
-    //    {
-    //        //add_vect = eventData.position - start_point;
-    //        v = 1;
-    //        for (int i = 0; i < Items.Count; i++)
-    //        {
-    //            Items[i].Drag(v);
-    //        }
-    //        Check(v);
-    //    } 
-    //    else if(Input.GetKeyDown(KeyCode.A))
-    //    {
-    //        //add_vect = eventData.position - start_point;
-    //        v = -1;
-    //        for (int i = 0; i < Items.Count; i++)
-    //        {
-    //            Items[i].Drag(v);
-    //        }
-    //        Check(v);
-    //    }
-    //}
 
     public void Check(float _v)
     {
