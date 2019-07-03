@@ -2,19 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
 
 	[SerializeField]
 	[Header("子弹飞行速度")]
 	private float speed = 20.0f;
 
+	[SerializeField]
+	[Header("爆炸攻击范围")]
+	private float attackRange = 1.0f;
+
 
 	private Rigidbody m_rigidbody;
 	private GameObject damageSource;
-	private int damage;
+	private float damage;
 
-	public static void Emmision(GameObject bullet, GameObject tank, int damage)
+	public static void Emmision(GameObject bullet, GameObject tank, float damage)
 	{
 		if(!bullet.CompareTag("Bullet"))
 		{
@@ -29,7 +33,7 @@ public abstract class Bullet : MonoBehaviour
 
 		GameObject instance =
 			Instantiate<GameObject>(bullet,
-									tank.transform.position + 0.2f * tank.transform.forward,
+									tank.GetComponent<Tank>().EmissionPosition + tank.transform.position,
 									tank.transform.rotation
 				);
 
@@ -64,7 +68,43 @@ public abstract class Bullet : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{
-		
+		if (collision.transform == damageSource.transform)
+			return;
+
+		Collider[] colliders;
+		colliders = Physics.OverlapSphere(transform.position, 0.5f * attackRange);
+		foreach(Collider collider in colliders)
+		{
+			if (collider.CompareTag("Tank"))
+			{
+				collider.GetComponent<Tank>().Damage(damage * 0.4f);
+			}
+		}
+		colliders = Physics.OverlapSphere(transform.position, 0.8f * attackRange);
+		foreach (Collider collider in colliders)
+		{
+			if (collider.CompareTag("Tank"))
+			{
+				collider.GetComponent<Tank>().Damage(damage * 0.3f);
+			}
+		}
+		colliders = Physics.OverlapSphere(transform.position,  1.0f * attackRange);
+		foreach (Collider collider in colliders)
+		{
+			if (collider.CompareTag("Tank"))
+			{
+				collider.GetComponent<Tank>().Damage(damage * 0.3f);
+			}
+		}
+
+		Instantiate<GameObject>(
+				Resources.Load<GameObject>("Prefabs/Effects/ShellExplosion"),
+				transform.position,
+				transform.rotation
+			);
+
+		Destroy(gameObject);
+
 	}
 
 
