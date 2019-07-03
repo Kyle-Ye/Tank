@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
 
 		GameObject instance =
 			Instantiate<GameObject>(bullet,
-									tank.GetComponent<Tank>().EmissionPosition,
+									tank.GetComponent<Tank>().EmissionPosition + tank.transform.position,
 									tank.transform.rotation
 				);
 
@@ -71,29 +71,33 @@ public class Bullet : MonoBehaviour
 		if (collision.transform == damageSource.transform)
 			return;
 
-		GameObject[] tanks = GameObject.FindGameObjectsWithTag("Tank");
-
-		foreach(GameObject tank in tanks)
+		Collider[] colliders;
+		colliders = Physics.OverlapSphere(transform.position, 0.5f * attackRange);
+		foreach(Collider collider in colliders)
 		{
-			Vector3 v1 = transform.position;
-			Vector3 v2 = tank.transform.position;
-			v1.y = 0;
-			v2.y = 0;
-			float distance = Vector3.Distance(v1, v2);
-			distance -= 1.0f;
-			if (distance < 0)
-				distance = 0;
-
-			if(distance < 1.0f)
+			if (collider.CompareTag("Tank"))
 			{
-				float damageScale = 1 - distance;
-				damageScale = damageScale * damageScale;
-
-				tank.GetComponent<Tank>().Damage(damageScale * damage);
-
+				collider.GetComponent<Tank>().Damage(damage * 0.4f);
 			}
-
 		}
+		colliders = Physics.OverlapSphere(transform.position, 0.8f * attackRange);
+		foreach (Collider collider in colliders)
+		{
+			if (collider.CompareTag("Tank"))
+			{
+				collider.GetComponent<Tank>().Damage(damage * 0.3f);
+			}
+		}
+		colliders = Physics.OverlapSphere(transform.position,  1.0f * attackRange);
+		foreach (Collider collider in colliders)
+		{
+			if (collider.CompareTag("Tank"))
+			{
+				collider.GetComponent<Tank>().Damage(damage * 0.3f);
+			}
+		}
+
+		Destroy(gameObject);
 
 	}
 

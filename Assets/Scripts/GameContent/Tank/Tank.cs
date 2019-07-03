@@ -177,11 +177,13 @@ public class Tank : MonoBehaviour
 	public void Damage(float damage)
 	{
 		//Caculate random damage scale
-		float damageScale = Random.Range(-1.0f, 1.0f);
-		damageScale = damageScale * damageScale * damageScale;
+		float damageScale = Random.Range(0.5f, 1.5f);
 
 		float _damage = damage * damageScale;
 		this.health -= (int)(_damage / armor);
+
+		if (transform.name == "TTT")
+			Debug.Log(health);
 
 		if (this.health <= 0)
 			Die();
