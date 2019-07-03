@@ -22,7 +22,7 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 		m_DraggingIcons[eventData.pointerId] = new GameObject("icon");
 
 		m_DraggingIcons[eventData.pointerId].transform.SetParent (canvas.transform, false);
-		m_DraggingIcons[eventData.pointerId].transform.SetAsLastSibling();
+		m_DraggingIcons[eventData.pointerId].transform.SetAsLastSibling();//显示移至图层最上层
 		
 		var image = m_DraggingIcons[eventData.pointerId].AddComponent<Image>();
 		// The icon will be under the cursor.
