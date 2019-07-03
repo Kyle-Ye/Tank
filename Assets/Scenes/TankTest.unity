@@ -398,6 +398,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank
       objectReference: {fileID: 0}
+    - target: {fileID: 3151938899540549828, guid: ed09a6cf6deb51b41935b93d8a5a970e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3151938899540852004, guid: ed09a6cf6deb51b41935b93d8a5a970e,
         type: 3}
       propertyPath: m_LocalPosition.x

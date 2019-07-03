@@ -219,6 +219,11 @@ public class Tank : MonoBehaviour
 
 	private void Die()
 	{
+		Instantiate<GameObject>(
+			Resources.Load<GameObject>("Prefabs/Effects/TankExplosion"),
+			transform.position,
+			transform.rotation
+		);
 		Destroy(gameObject);
 	}
 

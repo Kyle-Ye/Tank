@@ -97,6 +97,12 @@ public class Bullet : MonoBehaviour
 			}
 		}
 
+		Instantiate<GameObject>(
+				Resources.Load<GameObject>("Prefabs/Effects/ShellExplosion"),
+				transform.position,
+				transform.rotation
+			);
+
 		Destroy(gameObject);
 
 	}
