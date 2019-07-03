@@ -50,6 +50,11 @@ public class Tank : MonoBehaviour
 	[Header("炮弹")]
 	private GameObject bullet;
 
+	[SerializeField]
+	[Header("炮口局部坐标")]
+	private Vector3 emissionPosition;
+	public Vector3 EmissionPosition { get { return emissionPosition; } }
+
 	#endregion
 
 	#region 私有属性
@@ -79,11 +84,13 @@ public class Tank : MonoBehaviour
 			Debug.LogError("BulletObject不是一个合法的Bullet");
 			return;
 		}
+
+		health = maxHealth;
 	}
 
 	public void Update()
 	{
-		//油量回复
+		//油量计算
 		if (speed < 0.5f)
 		{
 			oil_timeVal += Time.deltaTime;
@@ -91,6 +98,7 @@ public class Tank : MonoBehaviour
 		else
 		{
 			oil_timeVal = 0.0f;
+			oil -= moveOilWear * speed * Time.deltaTime;
 		}
 		if(oil_timeVal > 1.5f)
 		{
@@ -122,13 +130,35 @@ public class Tank : MonoBehaviour
 	//前进方法
 	public void GoForward()
 	{
+		if (oil <= 0)
+		{
+			return;
+		}
+
 		speed += (maxSpeed - speed) * 0.1f;
+
+		oil -= Mathf.Abs(speed) * moveOilWear * Time.deltaTime;
+		if(oil < 0)
+		{
+			oil = 0;
+		}
 	}
 
 	//后退方法
 	public void GoBack()
 	{
+		if (oil <= 0)
+		{
+			return;
+		}
+
 		speed += (-0.5f * maxSpeed - speed) * 0.1f;
+
+		oil -= Mathf.Abs(speed) * moveOilWear * Time.deltaTime;
+		if (oil < 0)
+		{
+			oil = 0;
+		}
 	}
 
 	//左转向
@@ -152,11 +182,25 @@ public class Tank : MonoBehaviour
 
 		float _damage = damage * damageScale;
 		this.health -= (int)(_damage / armor);
+
+		if (this.health <= 0)
+			Die();
+
 	}
 
 	//发射炮弹
 	public void Attack()
 	{
+		//Caculate oil
+		if(oil - attackOilWear > 0)
+		{
+			oil -= attackOilWear;
+		}
+		else
+		{
+			return;
+		}
+
 		//Apply CDs
 		if(cd_timeVal > 1e-6)
 		{
@@ -169,6 +213,11 @@ public class Tank : MonoBehaviour
 
 		//Aenerate attack
 		Bullet.Emmision(bullet, gameObject, damage);
+	}
+
+	private void Die()
+	{
+		Destroy(gameObject);
 	}
 
 

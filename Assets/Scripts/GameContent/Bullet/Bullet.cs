@@ -9,6 +9,10 @@ public class Bullet : MonoBehaviour
 	[Header("子弹飞行速度")]
 	private float speed = 20.0f;
 
+	[SerializeField]
+	[Header("爆炸攻击范围")]
+	private float attackRange = 1.0f;
+
 
 	private Rigidbody m_rigidbody;
 	private GameObject damageSource;
@@ -29,7 +33,7 @@ public class Bullet : MonoBehaviour
 
 		GameObject instance =
 			Instantiate<GameObject>(bullet,
-									tank.transform.position + 0.2f * tank.transform.forward,
+									tank.GetComponent<Tank>().EmissionPosition,
 									tank.transform.rotation
 				);
 
@@ -64,7 +68,33 @@ public class Bullet : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{
+		if (collision.transform == damageSource.transform)
+			return;
+
 		GameObject[] tanks = GameObject.FindGameObjectsWithTag("Tank");
+
+		foreach(GameObject tank in tanks)
+		{
+			Vector3 v1 = transform.position;
+			Vector3 v2 = tank.transform.position;
+			v1.y = 0;
+			v2.y = 0;
+			float distance = Vector3.Distance(v1, v2);
+			distance -= 1.0f;
+			if (distance < 0)
+				distance = 0;
+
+			if(distance < 1.0f)
+			{
+				float damageScale = 1 - distance;
+				damageScale = damageScale * damageScale;
+
+				tank.GetComponent<Tank>().Damage(damageScale * damage);
+
+			}
+
+		}
+
 	}
 
 
