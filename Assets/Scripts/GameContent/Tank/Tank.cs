@@ -47,6 +47,10 @@ public class Tank : MonoBehaviour
 	private GameObject bullet;
 
 	[SerializeField]
+	[Header("坦克色调材质所挂载的GameObject")]
+	private GameObject colorObject;
+
+	[SerializeField]
 	[Header("炮口局部坐标")]
 	private Vector3 emissionPosition;
 	public Vector3 EmissionPosition { get { return emissionPosition; } }

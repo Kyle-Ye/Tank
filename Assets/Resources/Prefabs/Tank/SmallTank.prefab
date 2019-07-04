@@ -207,11 +207,10 @@ MonoBehaviour:
   maxHealth: 100
   maxOil: 100
   moveOilWear: 1
-  attackOilWear: 20
-  oilRegenerateSpeed: 0.2
+  oilRegenerateSpeed: 0.4
   armor: 1
   damage: 50
-  maxSpeed: 5
+  maxSpeed: 10
   maxAngleSpeed: 360
   attackCD: 3
   bullet: {fileID: 0}
