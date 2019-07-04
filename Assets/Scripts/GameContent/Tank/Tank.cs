@@ -67,7 +67,16 @@ public class Tank : MonoBehaviour
 	private float speedScale = 1.0f;        //速度缩放倍率(作用举例：加速道具)
 
 	private float cd_timeVal = 0.0f;        //攻击CD计时器
-	private float oil_timeVal = 0.0f;		//油量恢复计时器
+	private float oil_timeVal = 0.0f;       //油量恢复计时器
+
+	#endregion
+
+	#region 静态方法
+
+	public static void PlayerStart()
+	{
+		Transform playerStartTrans = GameObject.FindWithTag("PlayerStart").transform;
+	}
 
 	#endregion
 
