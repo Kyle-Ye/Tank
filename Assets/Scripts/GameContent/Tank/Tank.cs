@@ -19,10 +19,6 @@ public class Tank : MonoBehaviour
 	private float moveOilWear = 4.0f;
 
 	[SerializeField]
-	[Header("攻击油耗")]
-	private float attackOilWear = 20.0f;
-
-	[SerializeField]
 	[Header("油量恢复速度")]
 	private float oilRegenerateSpeed = 0.2f;
 
@@ -193,16 +189,6 @@ public class Tank : MonoBehaviour
 	//发射炮弹
 	public void Attack()
 	{
-		//Caculate oil
-		if(oil - attackOilWear > 0)
-		{
-			oil -= attackOilWear;
-		}
-		else
-		{
-			return;
-		}
-
 		//Apply CDs
 		if(cd_timeVal > 1e-6)
 		{
