@@ -16,7 +16,7 @@ public class Tank : MonoBehaviour
 
 	[SerializeField]
 	[Header("移动油耗")]
-	private float moveOilWear = 4.0f;
+	private float moveOilWear = 2.0f;
 
 	[SerializeField]
 	[Header("油量恢复速度")]
@@ -87,14 +87,14 @@ public class Tank : MonoBehaviour
 	public void Update()
 	{
 		//油量计算
-		if (speed < 0.5f)
+		if (Mathf.Abs(speed) < 0.5f)
 		{
 			oil_timeVal += Time.deltaTime;
 		}
 		else
 		{
 			oil_timeVal = 0.0f;
-			oil -= moveOilWear * speed * Time.deltaTime;
+			oil -= moveOilWear * Mathf.Abs(speed) * Time.deltaTime;
 		}
 		if(oil_timeVal > 1.5f)
 		{
