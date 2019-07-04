@@ -16,11 +16,7 @@ public class Tank : MonoBehaviour
 
 	[SerializeField]
 	[Header("移动油耗")]
-	private float moveOilWear = 4.0f;
-
-	[SerializeField]
-	[Header("攻击油耗")]
-	private float attackOilWear = 20.0f;
+	private float moveOilWear = 2.0f;
 
 	[SerializeField]
 	[Header("油量恢复速度")]
@@ -51,6 +47,10 @@ public class Tank : MonoBehaviour
 	private GameObject bullet;
 
 	[SerializeField]
+	[Header("坦克色调材质所挂载的GameObject")]
+	private GameObject colorObject;
+
+	[SerializeField]
 	[Header("炮口局部坐标")]
 	private Vector3 emissionPosition;
 	public Vector3 EmissionPosition { get { return emissionPosition; } }
@@ -67,7 +67,16 @@ public class Tank : MonoBehaviour
 	private float speedScale = 1.0f;        //速度缩放倍率(作用举例：加速道具)
 
 	private float cd_timeVal = 0.0f;        //攻击CD计时器
-	private float oil_timeVal = 0.0f;		//油量恢复计时器
+	private float oil_timeVal = 0.0f;       //油量恢复计时器
+
+	#endregion
+
+	#region 静态方法
+
+	public static void PlayerStart()
+	{
+		Transform playerStartTrans = GameObject.FindWithTag("PlayerStart").transform;
+	}
 
 	#endregion
 
@@ -91,14 +100,14 @@ public class Tank : MonoBehaviour
 	public void Update()
 	{
 		//油量计算
-		if (speed < 0.5f)
+		if (Mathf.Abs(speed) < 0.5f)
 		{
 			oil_timeVal += Time.deltaTime;
 		}
 		else
 		{
 			oil_timeVal = 0.0f;
-			oil -= moveOilWear * speed * Time.deltaTime;
+			oil -= moveOilWear * Mathf.Abs(speed) * Time.deltaTime;
 		}
 		if(oil_timeVal > 1.5f)
 		{
@@ -193,16 +202,6 @@ public class Tank : MonoBehaviour
 	//发射炮弹
 	public void Attack()
 	{
-		//Caculate oil
-		if(oil - attackOilWear > 0)
-		{
-			oil -= attackOilWear;
-		}
-		else
-		{
-			return;
-		}
-
 		//Apply CDs
 		if(cd_timeVal > 1e-6)
 		{
