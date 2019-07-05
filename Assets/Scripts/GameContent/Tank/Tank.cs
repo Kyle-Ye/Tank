@@ -68,14 +68,84 @@ public class Tank : MonoBehaviour
 
 	private float cd_timeVal = 0.0f;        //攻击CD计时器
 	private float oil_timeVal = 0.0f;       //油量恢复计时器
+	private float speed_timeVal = 0.0f;     //加速BUFF计时器
+	private float armor_timeVal = 0.0f;		//护盾计时器
 
 	#endregion
 
 	#region 静态方法
 
+	private static GameObject[] tanks; 
+
 	public static void PlayerStart()
 	{
 		Transform playerStartTrans = GameObject.FindWithTag("PlayerStart").transform;
+
+		TankPrepare[] tankPrepares = new TankPrepare[5];   
+		tanks = new GameObject[5];
+		for(int i = 1; i <= 4; i++)
+		{
+			tankPrepares[i] = TankModel.TankList[i];
+
+			tanks[i] = Instantiate<GameObject>(tankPrepares[i].tank, playerStartTrans.Find("PlayerStart" + i).position, playerStartTrans.Find("PlayerStart" + i).rotation);
+			TankUserController userController = tanks[i].AddComponent<TankUserController>();
+			userController.key_forward = tankPrepares[i].key_Up;
+			userController.key_back = tankPrepares[i].key_Down;
+			userController.key_left = tankPrepares[i].key_Left;
+			userController.key_right = tankPrepares[i].key_Right;
+			userController.key_attack = tankPrepares[i].key_Attack;
+			userController.key_use = tankPrepares[i].key_Use;
+
+			tanks[i].GetComponent<TankColorSet>().SetColor(i);
+
+		}
+		
+
+	}
+
+	#endregion
+
+	#region 对外接口
+
+	//坦克受到攻击
+	public void Damage(float damage)
+	{
+		//无敌判定
+		if (armor_timeVal > 0)
+			return;
+
+		//Caculate random damage scale
+		float damageScale = Random.Range(0.5f, 1.5f);
+
+		float _damage = damage * damageScale;
+		this.health -= (int)(_damage / armor);
+
+		if (transform.name == "TTT")
+			Debug.Log(health);
+
+		if (this.health <= 0)
+			Die();
+
+	}
+
+	/// <summary>
+	/// 改变速度scale（实现加速减速）
+	/// </summary>
+	/// <param name="scale"></param>新的scale
+	/// <param name="time"></param>持续时间
+	public void ScaleSpeed(float scale,float time)
+	{
+		speed_timeVal = time;
+		speedScale = scale;
+	}
+
+	/// <summary>
+	/// 提供无敌护盾
+	/// </summary>
+	/// <param name="time"></param>持续时间 
+	public void GenArmor(float time)
+	{
+		armor_timeVal = time;
 	}
 
 	#endregion
@@ -122,6 +192,27 @@ public class Tank : MonoBehaviour
 		else
 		{
 			cd_timeVal = 0.0f;
+		}
+
+		//SpeedScale相关
+		if(speed_timeVal > 0)
+		{
+			speed_timeVal -= Time.deltaTime;
+		}
+		else
+		{
+			speed_timeVal = 0;
+			speedScale = 1;
+		}
+
+		//Armor相关
+		if (armor_timeVal > 0)
+		{
+			armor_timeVal -= Time.deltaTime;
+		}
+		else
+		{
+			armor_timeVal = 0;
 		}
 
 	}
@@ -182,22 +273,7 @@ public class Tank : MonoBehaviour
 		angleSpeed = (maxAngleSpeed - speed) * 0.2f;	
 	}
 
-	//坦克受到攻击
-	public void Damage(float damage)
-	{
-		//Caculate random damage scale
-		float damageScale = Random.Range(0.5f, 1.5f);
 
-		float _damage = damage * damageScale;
-		this.health -= (int)(_damage / armor);
-
-		if (transform.name == "TTT")
-			Debug.Log(health);
-
-		if (this.health <= 0)
-			Die();
-
-	}
 
 	//发射炮弹
 	public void Attack()
