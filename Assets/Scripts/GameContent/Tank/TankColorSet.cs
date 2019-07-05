@@ -5,6 +5,6 @@ using UnityEngine;
 
 public abstract class TankColorSet : MonoBehaviour
 {
-	public abstract void SetColor(Color color);
+	public abstract void SetColor(int playerNumber);
 }
 
