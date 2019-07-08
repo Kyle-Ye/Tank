@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wrench : Item
+public class Wrench : Item
 {
-    private Tank tankInfo;
-    // Start is called before the first frame update
-    void Start()
-    {
-        tankInfo = TankManager.Instance.GetTank(tankId);
-    }
+    Wrench()
+	{
+		this.sprite = Resources.Load<Sprite>("扳手图片的路径");
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public override void Use(Tank tank)
+	{
+		//这里写让tank血量恢复的代码
+		//玩家索引是传入的参数
+		//tank.SetOil()之类的
+	}
+
+
 }

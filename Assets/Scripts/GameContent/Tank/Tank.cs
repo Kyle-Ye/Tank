@@ -163,6 +163,19 @@ public class Tank : MonoBehaviour
 		item = null;
 	}
 
+	public Sprite GetItemSprite()
+	{
+		if(item != null)
+		{
+			return item.sprite;
+		}
+		else
+		{
+			return null;
+		}
+		
+	}
+
 	#endregion
 
 	public void Awake()
