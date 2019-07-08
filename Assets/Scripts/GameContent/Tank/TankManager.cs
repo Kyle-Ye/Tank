@@ -52,10 +52,10 @@ public class TankManager : MonoBehaviour
 					tank = Resources.Load<GameObject>("Prefabs/Tank/SmallTank");
 					break;
 				case TankModel.tankType.middle:
-					tank = Resources.Load<GameObject>("");
+					tank = Resources.Load<GameObject>("Prefabs/Tank/BigTank");
 					break;
 				case TankModel.tankType.big:
-					tank = Resources.Load<GameObject>("Prefabs/Tank/BigTank");
+					tank = Resources.Load<GameObject>("Prefabs/Tank/SpecialTank");
 					break;
 			}
 
