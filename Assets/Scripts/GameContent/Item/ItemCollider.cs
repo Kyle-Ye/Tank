@@ -9,7 +9,6 @@ public class ItemCollider : MonoBehaviour
 {
 	[SerializeField]
 	public Item item;
-	
 
 	//发生碰撞，赋给玩家
 	void OnCollisionEnter(Collision other)

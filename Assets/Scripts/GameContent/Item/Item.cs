@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-[Serializable]
-public abstract class Item
+[System.Serializable]
+public abstract class Item : UnityEngine.Object
 {
 
 	public Sprite sprite;
