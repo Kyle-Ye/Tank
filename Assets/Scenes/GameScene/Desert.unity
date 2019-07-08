@@ -3366,10 +3366,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08d9e7b95225384ab3300b4e7bafd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  Clip1: {fileID: 0}
-  Clip2: {fileID: 0}
-  Clip3: {fileID: 0}
+  audioSource: {fileID: 1549154285}
+  Clip1: {fileID: 8300000, guid: 2b4f16ec6a79fa84483ff8aad34454b1, type: 3}
+  Clip2: {fileID: 8300000, guid: 02fe5602256359744ad0d9fece4d03dc, type: 3}
+  Clip3: {fileID: 8300000, guid: 8d4dc9cb8f5bebe44b9edf558017f136, type: 3}
+  Clip4: {fileID: 8300000, guid: 408820cbca2882a49aa75c6fed040559, type: 3}
+  Clip5: {fileID: 8300000, guid: 597f7a84ffe0f224f8f728f44e6f225e, type: 3}
+  Clip6: {fileID: 8300000, guid: 94119f2541214e24ea0cb230738b9e3b, type: 3}
   musicVolume: 0
   randomNum: 0
   state: 0
