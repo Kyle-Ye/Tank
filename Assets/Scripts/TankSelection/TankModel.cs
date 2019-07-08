@@ -26,7 +26,7 @@ public class TankModel : MonoBehaviour
         small
     }
 
-    public static Dictionary<int, TankPrepare> TankList;
+    public Dictionary<int, TankPrepare> TankList;
     // Start is called before the first frame update
     void Start()
     {
