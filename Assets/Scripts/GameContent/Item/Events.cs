@@ -19,9 +19,9 @@ public class Events : MonoBehaviour
     {
         timeVal += Time.deltaTime;
         
-        if(timeVal >= 15.0f)
+        if(timeVal >= 5.0f)
         {
-            eventNum = Random.Range(0, 4);
+            eventNum = Random.Range(1, 3);
             switch (eventNum)
             {
                 case 1: OilBeHalf();break;
@@ -42,14 +42,15 @@ public class Events : MonoBehaviour
 
     public void OilBeHalf()
     {
-        float oil1 = tank1.GetOil();
-        tank1.SetOil(-oil1);
-        float oil2 = tank2.GetOil();
-        tank2.SetOil(-oil2);
-        float oil3 = tank3.GetOil();
-        tank3.SetOil(-oil3);
-        float oil4 = tank4.GetOil();
-        tank4.SetOil(-oil4);
+        //float oil1 = tank1.GetOil();
+        tank1.SetOil(-30);
+        //float oil2 = tank2.GetOil();
+        tank2.SetOil(-30);
+        //float oil3 = tank3.GetOil();
+        tank3.SetOil(-30);
+        //float oil4 = tank4.GetOil();
+        tank4.SetOil(-30);
+        Debug.Log(1);
     }
 
     IEnumerator BeOpposite()
@@ -57,6 +58,7 @@ public class Events : MonoBehaviour
         TankUserController.isOpposite = true;
         yield return new WaitForSeconds(10);
         TankUserController.isOpposite = false;
+        Debug.Log(2);
     }
 
 

@@ -36,12 +36,18 @@ public class TankUserController : MonoBehaviour
 	{
 		if (Input.GetKey(key_forward))
 		{
-			tank.GoForward();
-		}
+            if (!isOpposite)
+                tank.GoForward();
+            else
+                tank.GoBack();
+        }
 		if (Input.GetKey(key_back))
 		{
-			tank.GoBack();
-		}
+            if (!isOpposite)
+                tank.GoBack();
+            else
+                tank.GoForward();
+        }
 		if (Input.GetKey(key_left))
 		{
 			if (!isOpposite)
