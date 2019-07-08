@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-[Serializable]
-public abstract class Item
+[System.Serializable]
+public class Item
 {
 
 	public Sprite sprite;
@@ -15,6 +15,9 @@ public abstract class Item
 	/// 使道具生效的方法
 	/// </summary>
 	/// <param name="tank"></param>使用道具的坦克
-	public abstract void Use(Tank tank);
+	public virtual void Use(Tank tank)
+	{
+
+	}
 
 }
