@@ -52,9 +52,9 @@ public class TankUserController : MonoBehaviour
 		if (Input.GetKey(key_right))
 		{
 			if (!isOpposite)
-				tank.TurnLeft();
-			else
 				tank.TurnRight();
+			else
+				tank.TurnLeft();
 		}
 	}
 
