@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TankManager : MonoBehaviour
 {
-	private static GameObject[] tanks; 
-
 	private static TankManager instance = null;
 	public static TankManager Instance
 	{
@@ -15,9 +13,12 @@ public class TankManager : MonoBehaviour
 		}
 	}
 
-	#region Editor
-
-	#endregion
+	private GameObject[] tanks;
+	
+	public Tank GetTank(int tankID)
+	{
+		return tanks[tankID].GetComponent<Tank>();
+	}
 
 	void Awake()
 	{
