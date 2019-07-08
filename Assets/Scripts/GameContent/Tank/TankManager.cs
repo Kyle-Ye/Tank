@@ -69,7 +69,7 @@ public class TankManager : MonoBehaviour
 
 		}
 
-
+		UIplayer.canGet = true;
 	}
 
 	void OnDrawGizmos()

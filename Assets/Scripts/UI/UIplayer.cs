@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class UIplayer : MonoBehaviour
 {
-    public int tankId;
+	public static bool canGet = false;
+
+	public int tankId;
     private Tank tankInfo;
     public Slider bloodSlider, oilSlider;
     public Image itemImage;
     private int blood;
     private float oil;
-    public bool canGet = false;
     private bool numberGet = false;
     private bool refreshNumber = false;
     // Start is called before the first frame update
     void Start()
     {
-        
         
         
     }
@@ -28,7 +28,7 @@ public class UIplayer : MonoBehaviour
         if (canGet)
         {
             tankInfo = TankManager.Instance.GetTank(tankId);
-            canGet = false;
+//            canGet = false;
             numberGet = true;
         }
 
@@ -47,4 +47,7 @@ public class UIplayer : MonoBehaviour
         }
        
     }
+
+
+
 }
