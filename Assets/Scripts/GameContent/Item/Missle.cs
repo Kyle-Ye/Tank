@@ -11,6 +11,6 @@ public class Missle : Item
 
 	public override void Use(Tank tank)
 	{
-		
+		MissleBullet.Emmision(tank.gameObject, 80);
 	}
 }

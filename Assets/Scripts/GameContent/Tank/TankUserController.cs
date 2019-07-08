@@ -29,6 +29,7 @@ public class TankUserController : MonoBehaviour
 		if(Input.GetKeyDown(key_use))
 		{
 			//UnFinished function
+			tank.UseItem();
 		}
 	}
 
