@@ -29,7 +29,21 @@ public class TankManager : MonoBehaviour
 		{
 			tankPrepares[i] = TankModel.TankList[i];
 
-			tanks[i] = Instantiate<GameObject>(tankPrepares[i].tank, playerStartTrans.Find("PlayerStart" + i).position, playerStartTrans.Find("PlayerStart" + i).rotation);
+			GameObject tank = null;
+			switch (tankPrepares[i].tanktype)
+			{
+				case TankModel.tankType.small:
+					tank = Resources.Load<GameObject>("Prefabs/Tank/SmallTank");
+					break;
+				case TankModel.tankType.middle:
+					tank = Resources.Load<GameObject>("");
+					break;
+				case TankModel.tankType.big:
+					tank = Resources.Load<GameObject>("");
+					break;
+			}
+
+			tanks[i] = Instantiate<GameObject>(tank, playerStartTrans.Find("PlayerStart" + i).position, playerStartTrans.Find("PlayerStart" + i).rotation);
 			TankUserController userController = tanks[i].AddComponent<TankUserController>();
 			userController.key_forward = tankPrepares[i].key_Up;
 			userController.key_back = tankPrepares[i].key_Down;
