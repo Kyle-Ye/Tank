@@ -26,12 +26,11 @@ public class UIplayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canGet)
-        {
-            tankInfo = TankManager.Instance.GetTank(tankId);
-//            canGet = false;
-            numberGet = true;
-        }
+		if(canGet)
+		{
+			if (tankInfo = TankManager.Instance.GetTank(tankId))
+				numberGet = true;
+		}
 
         if (numberGet)
         {

@@ -332,7 +332,9 @@ public class Tank : MonoBehaviour
 			transform.position,
 			transform.rotation
 		);
-		Destroy(gameObject);
+		oil = 0;
+		health = 0;
+		gameObject.SetActive(false);
 	}
 
 
