@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class Item : MonoBehaviour
+public abstract class Item
 {
 
 	public Sprite sprite;

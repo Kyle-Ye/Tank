@@ -197,6 +197,7 @@ public class Tank : MonoBehaviour
 
 	public void Update()
 	{
+		Debug.Log(item);
 		//油量计算
 		if (Mathf.Abs(speed) < 0.5f)
 		{
