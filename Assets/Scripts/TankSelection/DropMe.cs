@@ -30,8 +30,8 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
         //TankModel.TankList[gridId].tankId = GameManager._tankId;
         //Debug.Log(TankModel.TankList[gridId].tankId);
-       TankModel.TankList[gridId].tanktype = GameManager.tanktype;
-        Debug.Log(TankModel.TankList[gridId].tanktype);
+       TankModel.Instance.TankList[gridId].tanktype = GameManager.tanktype;
+        Debug.Log(TankModel.Instance.TankList[gridId].tanktype);
         
 	}
 
