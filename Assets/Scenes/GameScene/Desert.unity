@@ -283,24 +283,28 @@ PrefabInstance:
     - target: {fileID: 3151938899540852004, guid: ed09a6cf6deb51b41935b93d8a5a970e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3151938899540852004, guid: ed09a6cf6deb51b41935b93d8a5a970e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3151938899540852004, guid: ed09a6cf6deb51b41935b93d8a5a970e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3242421774136587557, guid: ed09a6cf6deb51b41935b93d8a5a970e,
         type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 3174901467775763247, guid: e2890016fe6807444bd82ccbde7fa141,
+      propertyPath: emissionPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242421774136587557, guid: ed09a6cf6deb51b41935b93d8a5a970e,
         type: 3}
+      propertyPath: emissionPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed09a6cf6deb51b41935b93d8a5a970e, type: 3}
 --- !u!1001 &610112793
@@ -602,8 +606,8 @@ MonoBehaviour:
   key_back: 115
   key_left: 97
   key_right: 100
-  key_attack: 282
-  key_use: 283
+  key_attack: 32
+  key_use: 0
 --- !u!1001 &1556364466
 PrefabInstance:
   m_ObjectHideFlags: 0

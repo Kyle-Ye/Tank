@@ -116,6 +116,26 @@ public class Tank : MonoBehaviour
 		armor_timeVal = time;
 	}
 
+	public int GetHealth()
+	{
+		return health;
+	}
+
+	public float GetOil()
+	{
+		return oil;
+	}
+
+	public int GetMaxHealth()
+	{
+		return maxHealth;
+	}
+
+	public float GetMaxOil()
+	{
+		return maxOil;
+	}
+
 	#endregion
 
 

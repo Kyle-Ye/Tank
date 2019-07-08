@@ -213,8 +213,9 @@ MonoBehaviour:
   maxSpeed: 10
   maxAngleSpeed: 360
   attackCD: 3
-  bullet: {fileID: 0}
-  emissionPosition: {x: 0, y: 0, z: 0}
+  bullet: {fileID: 3174901467775763247, guid: e2890016fe6807444bd82ccbde7fa141, type: 3}
+  colorObject: {fileID: 0}
+  emissionPosition: {x: 0, y: 1.5, z: 1}
 --- !u!54 &9187017573158465642
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -223,7 +224,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3151938899540549828}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
