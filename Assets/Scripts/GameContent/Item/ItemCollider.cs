@@ -19,9 +19,9 @@ public class ItemCollider : MonoBehaviour
 	public ItemType itemType;
 
 	//发生碰撞，赋给玩家
-	void OnCollisionEnter(Collision other)
+	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.CompareTag("Player"))
+		if (other.gameObject.CompareTag("Tank"))
 		{
 			Item item = null;
 			switch (itemType)
