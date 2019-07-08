@@ -69,11 +69,11 @@ public class Tank : MonoBehaviour
 	private float cd_timeVal = 0.0f;        //攻击CD计时器
 	private float oil_timeVal = 0.0f;       //油量恢复计时器
 	private float speed_timeVal = 0.0f;     //加速BUFF计时器
-	private float armor_timeVal = 0.0f;		//护盾计时器
+	private float armor_timeVal = 0.0f;     //护盾计时器
 
 	#endregion
 
-	#region 对外接口
+	#region 基础对外接口
 
 	//坦克受到攻击
 	public void Damage(float damage)
@@ -95,6 +95,20 @@ public class Tank : MonoBehaviour
 			Die();
 
 	}
+
+    public void SetHealth(int blood)
+    {
+        health += blood;
+        if (health >= 100)
+            health = 100;
+    }
+
+    public void SetOil(float _oil )
+    {
+        oil += _oil;
+        if (oil >= 100)
+            oil = 100;
+    }
 
 	/// <summary>
 	/// 改变速度scale（实现加速减速）
@@ -138,6 +152,31 @@ public class Tank : MonoBehaviour
 
 	#endregion
 
+	#region 道具相关
+
+	[HideInInspector]
+	public Item item;                     //当前玩家身上的道具
+
+	public void UseItem()
+	{
+		item.Use(this);
+		item = null;
+	}
+
+	public Sprite GetItemSprite()
+	{
+		if(item != null)
+		{
+			return item.sprite;
+		}
+		else
+		{
+			return null;
+		}
+		
+	}
+
+	#endregion
 
 	public void Awake()
 	{
@@ -293,7 +332,9 @@ public class Tank : MonoBehaviour
 			transform.position,
 			transform.rotation
 		);
-		Destroy(gameObject);
+		oil = 0;
+		health = 0;
+		gameObject.SetActive(false);
 	}
 
 

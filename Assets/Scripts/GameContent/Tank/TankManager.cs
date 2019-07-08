@@ -17,7 +17,10 @@ public class TankManager : MonoBehaviour
 	
 	public Tank GetTank(int tankID)
 	{
-		return tanks[tankID].GetComponent<Tank>();
+		if (tanks[tankID] != null)
+			return tanks[tankID].GetComponent<Tank>();
+		else
+			return null;
 	}
 
 	void Awake()
@@ -69,7 +72,7 @@ public class TankManager : MonoBehaviour
 
 		}
 
-
+		UIplayer.canGet = true;
 	}
 
 	void OnDrawGizmos()
