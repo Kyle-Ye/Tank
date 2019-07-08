@@ -170,7 +170,14 @@ public class Tank : MonoBehaviour
 		}
 		if(oil_timeVal > 1.5f)
 		{
-			oil += oilRegenerateSpeed * maxOil * Time.deltaTime;
+			if(oil < maxOil)
+			{
+				oil += oilRegenerateSpeed * maxOil * Time.deltaTime;
+			}
+			else
+			{
+				oil = maxOil;
+			}
 		}
 
 		//Attack 相关
@@ -261,8 +268,6 @@ public class Tank : MonoBehaviour
 	{
 		angleSpeed = (maxAngleSpeed - speed) * 0.2f;	
 	}
-
-
 
 	//发射炮弹
 	public void Attack()
