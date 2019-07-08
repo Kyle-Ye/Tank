@@ -120,6 +120,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &110411602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6593698295750256593, guid: 510ae34bcf7807248a098b6d03a53560,
+    type: 3}
+  m_PrefabInstance: {fileID: 1269413206826678371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171356253 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7142750052662542125, guid: 862089b63c160a94db1ef471d3631136,
@@ -213,6 +225,18 @@ CapsuleCollider:
   m_Height: 5.7265606
   m_Direction: 1
   m_Center: {x: 0.038626835, y: 2.8632798, z: -0.0448078}
+--- !u!114 &684749253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1269413207546859964, guid: 510ae34bcf7807248a098b6d03a53560,
+    type: 3}
+  m_PrefabInstance: {fileID: 1269413206826678371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &815285500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5353856646068514483, guid: 862089b63c160a94db1ef471d3631136,
@@ -573,8 +597,52 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -135
       objectReference: {fileID: 0}
+    - target: {fileID: 6501920025534785527, guid: d947ef3939ccc04468cd9d0f7a71873f,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerStart1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501920025963713064, guid: d947ef3939ccc04468cd9d0f7a71873f,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerStart3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501920026636500544, guid: d947ef3939ccc04468cd9d0f7a71873f,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerStart4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501920027445605299, guid: d947ef3939ccc04468cd9d0f7a71873f,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerStart2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d947ef3939ccc04468cd9d0f7a71873f, type: 3}
+--- !u!114 &1728242532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8918233554691741331, guid: 510ae34bcf7807248a098b6d03a53560,
+    type: 3}
+  m_PrefabInstance: {fileID: 1269413206826678371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1771668239 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2058597803473929137, guid: 510ae34bcf7807248a098b6d03a53560,
+    type: 3}
+  m_PrefabInstance: {fileID: 1269413206826678371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1777175038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1538,7 @@ MonoBehaviour:
   tankId: 1
   bloodSlider: {fileID: 1269413206826678383}
   oilSlider: {fileID: 1269413206826678384}
+  itemImage: {fileID: 684749253}
   canGet: 0
 --- !u!114 &1269413206826678374 stripped
 MonoBehaviour:
@@ -1600,6 +1669,7 @@ MonoBehaviour:
   tankId: 4
   bloodSlider: {fileID: 1269413206826678374}
   oilSlider: {fileID: 1269413206826678375}
+  itemImage: {fileID: 1771668239}
   canGet: 0
 --- !u!114 &1269413206826678386
 MonoBehaviour:
@@ -1616,6 +1686,7 @@ MonoBehaviour:
   tankId: 3
   bloodSlider: {fileID: 1269413206826678377}
   oilSlider: {fileID: 1269413206826678378}
+  itemImage: {fileID: 1728242532}
   canGet: 0
 --- !u!114 &1269413206826678387
 MonoBehaviour:
@@ -1632,4 +1703,5 @@ MonoBehaviour:
   tankId: 2
   bloodSlider: {fileID: 1269413206826678380}
   oilSlider: {fileID: 1269413206826678381}
+  itemImage: {fileID: 110411602}
   canGet: 0
