@@ -69,11 +69,11 @@ public class Tank : MonoBehaviour
 	private float cd_timeVal = 0.0f;        //攻击CD计时器
 	private float oil_timeVal = 0.0f;       //油量恢复计时器
 	private float speed_timeVal = 0.0f;     //加速BUFF计时器
-	private float armor_timeVal = 0.0f;		//护盾计时器
+	private float armor_timeVal = 0.0f;     //护盾计时器
 
 	#endregion
 
-	#region 对外接口
+	#region 基础对外接口
 
 	//坦克受到攻击
 	public void Damage(float damage)
@@ -152,6 +152,18 @@ public class Tank : MonoBehaviour
 
 	#endregion
 
+	#region 道具相关
+
+	[HideInInspector]
+	public Item item;                     //当前玩家身上的道具
+
+	public void UseItem()
+	{
+		item.Use(this);
+		item = null;
+	}
+
+	#endregion
 
 	public void Awake()
 	{
