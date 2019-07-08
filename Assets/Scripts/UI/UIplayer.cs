@@ -8,6 +8,7 @@ public class UIplayer : MonoBehaviour
     public int tankId;
     private Tank tankInfo;
     public Slider bloodSlider, oilSlider;
+    public Image itemImage;
     private int blood;
     private float oil;
     public bool canGet = false;
