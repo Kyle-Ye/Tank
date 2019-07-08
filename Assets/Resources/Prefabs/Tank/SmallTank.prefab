@@ -217,6 +217,7 @@ MonoBehaviour:
   bullet: {fileID: 3174901467775763247, guid: e2890016fe6807444bd82ccbde7fa141, type: 3}
   colorObject: {fileID: 0}
   emissionPosition: {x: 0, y: 1.5, z: 1.5}
+  item: {fileID: 0}
 --- !u!114 &1019063031421026682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,8 +257,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.5, z: 2}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 2, y: 2.0279193, z: 2.1319823}
+  m_Center: {x: 0, y: 0.88451767, z: -0.13197987}
 --- !u!1 &3151938899540549830
 GameObject:
   m_ObjectHideFlags: 0
