@@ -6,12 +6,12 @@ public class TankPrepare
 {
     public int tankId;
     public TankModel.tankType tanktype { get;  set; }       
-    public KeyCode key_Up { get; private set; }
-    public KeyCode key_Down { get; private set; }
-    public KeyCode key_Left { get; private set; }
-    public KeyCode key_Right { get; private set; }
-    public KeyCode key_Attack { get; private set; }
-    public KeyCode key_Use { get; private set; }
+    public KeyCode key_Up { get; set; }
+    public KeyCode key_Down { get; set; }
+    public KeyCode key_Left { get; set; }
+    public KeyCode key_Right { get; set; }
+    public KeyCode key_Attack { get; set; }
+    public KeyCode key_Use { get;  set; }
 
     public TankPrepare(int tankid, TankModel.tankType tank_type, KeyCode key_up, KeyCode key_down, KeyCode key_left, KeyCode key_right, KeyCode key_attack, KeyCode key_use)
     {
