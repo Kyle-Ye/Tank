@@ -11,6 +11,7 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	public Color highlightColor = Color.yellow;
     public int gridId;
 
+
     public void OnEnable ()
 	{
 		if (containerImage != null)
