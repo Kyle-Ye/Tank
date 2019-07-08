@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shileld : Item
 {
-    Shileld()
+    public Shileld()
     {
         this.sprite = Resources.Load<Sprite>("Textures and Sprites/Widgets/shileld");
     }
