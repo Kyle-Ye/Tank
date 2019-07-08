@@ -20,6 +20,7 @@ public class UI_Control_ScrollFlow_Item : MonoBehaviour,IPointerEnterHandler, IP
     private GameObject ButtonChangePanel;
     private GameObject StartGamePanel;
     private GameObject IntroductionPanel;
+    public GameObject Title;
 
     public void Start()
     {
@@ -122,14 +123,20 @@ public class UI_Control_ScrollFlow_Item : MonoBehaviour,IPointerEnterHandler, IP
             switch (function){
                 case 1:
                     StartGamePanel.SetActive(true);
+                    Title.SetActive(false);
                     break;
                     ;
                 case 2:
                     ButtonChangePanel.SetActive(true);
+                    Title.SetActive(false);
                     break;
                 case 3:
                     IntroductionPanel.SetActive(true);
-                    break;                
+                    Title.SetActive(false);
+                    break;
+                case 4:
+                    Application.Quit();
+                    break;
             }
             
             
