@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
 
 		GameObject instance =
 			Instantiate<GameObject>(bullet,
-									tank.GetComponent<Tank>().EmissionPosition + tank.transform.position,
+									Vector3.Scale(tank.GetComponent<Tank>().EmissionPosition, tank.transform.localScale) + tank.transform.position,
 									tank.transform.rotation
 				);
 
@@ -69,7 +69,9 @@ public class Bullet : MonoBehaviour
 	void OnCollisionEnter(Collision collision)
 	{
 		if (collision.transform == damageSource.transform)
+		{
 			return;
+		}
 
 		Collider[] colliders;
 		colliders = Physics.OverlapSphere(transform.position, 0.5f * attackRange);
