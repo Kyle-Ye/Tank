@@ -13,9 +13,10 @@ public class ItemCollider : MonoBehaviour
 		Wrench,
 		OilBottle,
 		Shileld,
-		Timer
+		Timer,
+		Missle
 	}
-	ItemType itemType;
+	public ItemType itemType;
 
 	//发生碰撞，赋给玩家
 	void OnCollisionEnter(Collision other)
@@ -36,6 +37,9 @@ public class ItemCollider : MonoBehaviour
 					break;
 				case ItemType.OilBottle:
 					item = new OilBottle();
+					break;
+				case ItemType.Missle:
+					item = new Missle();
 					break;
 			}
 
