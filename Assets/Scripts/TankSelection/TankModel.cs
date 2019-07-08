@@ -6,7 +6,7 @@ public class TankModel : MonoBehaviour
 {
     static TankModel instance;
 
-    public TankModel Instance
+    public static TankModel Instance
     {
         get
         {
