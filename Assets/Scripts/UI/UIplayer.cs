@@ -29,6 +29,7 @@ public class UIplayer : MonoBehaviour
 		if(canGet)
 		{
 			if (tankInfo = TankManager.Instance.GetTank(tankId))
+                itemImage.sprite = tankInfo.GetItemSprite();
 				numberGet = true;
 		}
 
@@ -46,7 +47,7 @@ public class UIplayer : MonoBehaviour
             oilSlider.value = oil / 100.0f;
         }
 
-        itemImage.sprite = tankInfo.GetItemSprite();
+        
     }
 
 
