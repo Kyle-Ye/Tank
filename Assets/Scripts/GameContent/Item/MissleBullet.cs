@@ -29,9 +29,12 @@ public class MissleBullet : MonoBehaviour
 
 		GameObject instance =
 			Instantiate<GameObject>(bulletPrefab,
-									ePos + tank.transform.position,
+									ePos + tank.transform.position + Vector3.up,
 									tank.transform.rotation
 				);
+		instance.GetComponent<MissleBullet>().damageSource = tank;
+		instance.GetComponent<MissleBullet>().damage = damage;
+		
 
 	}
 
