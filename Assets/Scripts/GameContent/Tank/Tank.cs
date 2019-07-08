@@ -96,6 +96,20 @@ public class Tank : MonoBehaviour
 
 	}
 
+    public void SetHealth(int blood)
+    {
+        health += blood;
+        if (health >= 100)
+            health = 100;
+    }
+
+    public void SetOil(float _oil )
+    {
+        oil += _oil;
+        if (oil >= 100)
+            oil = 100;
+    }
+
 	/// <summary>
 	/// 改变速度scale（实现加速减速）
 	/// </summary>
