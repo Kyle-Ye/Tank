@@ -6,7 +6,7 @@ public class TankModel : MonoBehaviour
 {
     static TankModel instance;
 
-    public TankModel Instance
+    public static TankModel Instance
     {
         get
         {
@@ -16,6 +16,7 @@ public class TankModel : MonoBehaviour
             }
             return instance;
         }
+        set { }
     }
 
     public enum tankType
@@ -25,7 +26,7 @@ public class TankModel : MonoBehaviour
         small
     }
 
-    public static Dictionary<int, TankPrepare> TankList;
+    public Dictionary<int, TankPrepare> TankList;
     // Start is called before the first frame update
     void Start()
     {

@@ -38,7 +38,7 @@ public class TankManager : MonoBehaviour
 		tanks = new GameObject[5];
 		for (int i = 1; i <= 4; i++)
 		{
-			tankPrepares[i] = TankModel.TankList[i];
+			tankPrepares[i] = TankModel.Instance.TankList[i];
 
 			GameObject tank = null;
 			switch (tankPrepares[i].tanktype)
