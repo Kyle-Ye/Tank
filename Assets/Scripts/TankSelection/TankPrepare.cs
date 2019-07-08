@@ -5,7 +5,7 @@ using UnityEngine;
 public class TankPrepare
 {
     public int tankId;
-    public TankModel.tankType tanktype { get; private set; }       
+    public TankModel.tankType tanktype { get;  set; }       
     public KeyCode key_Up { get; private set; }
     public KeyCode key_Down { get; private set; }
     public KeyCode key_Left { get; private set; }
