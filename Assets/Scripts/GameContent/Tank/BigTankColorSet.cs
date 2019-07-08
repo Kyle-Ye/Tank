@@ -14,16 +14,16 @@ public class BigTankColorSet : TankColorSet
 		switch (playerNumber)
 		{
 			case 1:
-				renderer = Resources.Load<GameObject>("Models/Tank/BigTank/tank_red");
+				renderer = Resources.Load<GameObject>("Models/Tank/BigTank/big_tank_red");
 				break;
 			case 2:
-				renderer = Resources.Load<GameObject>("Models/Tank/BigTank/tank_yellow");
+				renderer = Resources.Load<GameObject>("Models/Tank/BigTank/big_tank_yellow");
 				break;
 			case 3:
-				renderer = Resources.Load<GameObject>("Models/Tank/BigTank/tank_blue");
+				renderer = Resources.Load<GameObject>("Models/Tank/BigTank/big_tank_blue");
 				break;
 			case 4:
-				renderer = Resources.Load<GameObject>("Models/Tank/BigTank/tank_green");
+				renderer = Resources.Load<GameObject>("Models/Tank/BigTank/big_tank_green");
 				break;
 		}
 		Destroy(transform.Find("TankRenderers").gameObject);
