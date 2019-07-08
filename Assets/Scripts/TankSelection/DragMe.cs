@@ -48,6 +48,7 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         iconImage.sizeDelta = new Vector2(128F, 128F);
         //GameManager._tankId = tankId;
         GameManager.tanktype = itemType;
+        Debug.Log(GameManager.tanktype);
 		//image.SetNativeSize();
         
 		

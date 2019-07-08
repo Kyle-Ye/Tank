@@ -28,8 +28,11 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		if (dropSprite != null)
 			receivingImage.overrideSprite = dropSprite;
 
-        TankModel.TankList[gridId].tankId = GameManager._tankId;
-        Debug.Log(TankModel.TankList[gridId].tankId);
+        //TankModel.TankList[gridId].tankId = GameManager._tankId;
+        //Debug.Log(TankModel.TankList[gridId].tankId);
+        TankModel.TankList[gridId].tanktype = GameManager.tanktype;
+        Debug.Log(TankModel.TankList[gridId].tanktype);
+
         
 	}
 
