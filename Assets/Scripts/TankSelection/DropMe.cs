@@ -9,8 +9,9 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	public Image receivingImage;
 	private Color normalColor;
 	public Color highlightColor = Color.yellow;
-	
-	public void OnEnable ()
+    public int gridId;
+
+    public void OnEnable ()
 	{
 		if (containerImage != null)
 			normalColor = containerImage.color;
@@ -26,6 +27,10 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		Sprite dropSprite = GetDropSprite (data);
 		if (dropSprite != null)
 			receivingImage.overrideSprite = dropSprite;
+
+        TankModel.TankList[gridId].tankId = GameManager._tankId;
+        Debug.Log(TankModel.TankList[gridId].tankId);
+        
 	}
 
 	public void OnPointerEnter(PointerEventData data)

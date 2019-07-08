@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 	public bool dragOnSurfaces = true;
+    public int tankId;
 	
 	private Dictionary<int,GameObject> m_DraggingIcons = new Dictionary<int, GameObject>();
 	private Dictionary<int, RectTransform> m_DraggingPlanes = new Dictionary<int, RectTransform>();
@@ -33,6 +34,7 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 		image.sprite = GetComponent<Image>().sprite;
         RectTransform iconImage = m_DraggingIcons[eventData.pointerId].GetComponent<RectTransform>();
         iconImage.sizeDelta = new Vector2(128F, 128F);
+        GameManager._tankId = tankId;
 		//image.SetNativeSize();
         
 		

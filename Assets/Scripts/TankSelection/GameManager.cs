@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    static GameManager instance;
+
+    public GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new GameManager();
+            }
+            return instance;
+        }
+    }
     public int tankModel;
-    public 
+    public static int _tankId;
     void Start()
     {
         
