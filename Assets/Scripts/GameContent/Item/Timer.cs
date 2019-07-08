@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer : Item
 {
-    Timer()
+    public Timer()
     {
         this.sprite = Resources.Load<Sprite>("Textures and Sprites/Widgets/timer_mental");
     }

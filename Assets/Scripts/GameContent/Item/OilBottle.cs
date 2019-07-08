@@ -5,7 +5,7 @@ using UnityEngine;
 public class OilBottle : Item
 {
 
-    OilBottle()
+    public OilBottle()
     {
         this.sprite = Resources.Load<Sprite>("Textures and Sprites/Widgets/petrolCan");
     }

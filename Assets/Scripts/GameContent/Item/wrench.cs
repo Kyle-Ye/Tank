@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wrench : Item
 {
-    Wrench()
+    public Wrench()
 	{
 		this.sprite = Resources.Load<Sprite>("Textures and Sprites/Widgets/wrench");
 	}
