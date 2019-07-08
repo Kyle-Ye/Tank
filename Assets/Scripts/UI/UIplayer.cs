@@ -14,6 +14,7 @@ public class UIplayer : MonoBehaviour
     public bool canGet = false;
     private bool numberGet = false;
     private bool refreshNumber = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,8 @@ public class UIplayer : MonoBehaviour
             bloodSlider.value = blood / 100;
             oilSlider.value = oil / 100.0f;
         }
+
+        if()
        
     }
 }
