@@ -27,7 +27,9 @@ public class TankManager : MonoBehaviour
 
 	void Start()
 	{
-		PlayerStart();
+		Invoke("PlayerStart", 1.0f);
+		//随便调用一个方法，用于激活
+		TankModel.Instance.ToString();
 	}
 
 	public void PlayerStart()
