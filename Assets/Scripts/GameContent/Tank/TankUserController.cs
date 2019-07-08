@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TankUserController : MonoBehaviour
 {
+	public static bool isOpposite = false;
+
 	public KeyCode key_forward;
 	public KeyCode key_back;
 	public KeyCode key_left;
@@ -42,11 +44,17 @@ public class TankUserController : MonoBehaviour
 		}
 		if (Input.GetKey(key_left))
 		{
-			tank.TurnLeft();
+			if (!isOpposite)
+				tank.TurnLeft();
+			else
+				tank.TurnRight();
 		}
 		if (Input.GetKey(key_right))
 		{
-			tank.TurnRight();
+			if (!isOpposite)
+				tank.TurnRight();
+			else
+				tank.TurnLeft();
 		}
 	}
 
