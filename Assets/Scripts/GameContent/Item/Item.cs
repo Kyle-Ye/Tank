@@ -5,8 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
+[Serializable]
 public abstract class Item
-{ 
+{
+
+	public Sprite sprite;
 
 	/// <summary>
 	/// 使道具生效的方法
