@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4836119434298248544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.69, y: 1.2, z: 0.48}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 7145819324969527416}
   m_Father: {fileID: 0}
@@ -59,6 +59,7 @@ MonoBehaviour:
   bullet: {fileID: 3174901467775763247, guid: e2890016fe6807444bd82ccbde7fa141, type: 3}
   colorObject: {fileID: 0}
   emissionPosition: {x: 0, y: 1, z: 2}
+  item: {fileID: 0}
 --- !u!114 &3881665075659858829
 MonoBehaviour:
   m_ObjectHideFlags: 0
