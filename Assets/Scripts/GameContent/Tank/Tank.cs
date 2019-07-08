@@ -153,6 +153,7 @@ public class Tank : MonoBehaviour
 		}
 
 		health = maxHealth;
+		oil = maxOil;
 	}
 
 	public void Update()
