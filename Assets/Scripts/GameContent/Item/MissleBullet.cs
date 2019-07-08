@@ -69,17 +69,28 @@ public class MissleBullet : MonoBehaviour
 
 		agent.SetDestination(targetTank.transform.position);
 
+		//检测碰撞
+		Bomb();
 	}
 
-	void OnCollisionEnter(Collision collision)
+	void Bomb()
 	{
-		if (collision.transform == damageSource.transform)
-		{
-			return;
-		}
-
 		Collider[] colliders;
 		colliders = Physics.OverlapSphere(transform.position, 0.5f * attackRange);
+
+		//检查是否应该爆炸
+		bool flag = false;
+		foreach(var c in colliders)
+		{
+			GameObject obj = c.gameObject;
+			if(obj.CompareTag("Tank") && obj != damageSource)
+			{
+				flag = true;
+			}
+		}
+		if (flag == false)
+			return;
+
 		foreach (Collider collider in colliders)
 		{
 			if (collider.CompareTag("Tank"))
@@ -111,6 +122,16 @@ public class MissleBullet : MonoBehaviour
 			);
 
 		Destroy(gameObject);
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.transform == damageSource.transform)
+		{
+			return;
+		}
+
+
 
 	}
 
