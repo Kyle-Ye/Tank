@@ -43,11 +43,10 @@ public class UIplayer : MonoBehaviour
 
         if (refreshNumber)
         {
-            bloodSlider.value = blood / 100;
+            bloodSlider.value = blood / 100.0f;
             oilSlider.value = oil / 100.0f;
         }
 
-        if()
        
     }
 }
