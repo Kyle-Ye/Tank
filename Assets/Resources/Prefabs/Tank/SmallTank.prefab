@@ -168,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3151938899540852004}
   - component: {fileID: 3242421774136587557}
+  - component: {fileID: 1019063031421026682}
   - component: {fileID: 9187017573158465642}
   - component: {fileID: 496094351105898699}
   m_Layer: 0
@@ -186,7 +187,7 @@ Transform:
   m_GameObject: {fileID: 3151938899540549828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 3151938899540852008}
   m_Father: {fileID: 0}
@@ -215,7 +216,19 @@ MonoBehaviour:
   attackCD: 3
   bullet: {fileID: 3174901467775763247, guid: e2890016fe6807444bd82ccbde7fa141, type: 3}
   colorObject: {fileID: 0}
-  emissionPosition: {x: 0, y: 1.5, z: 1}
+  emissionPosition: {x: 0, y: 1.5, z: 1.5}
+--- !u!114 &1019063031421026682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151938899540549828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0d860cff984914eb81b64d775e1590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &9187017573158465642
 Rigidbody:
   m_ObjectHideFlags: 0

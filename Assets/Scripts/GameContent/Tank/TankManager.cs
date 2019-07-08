@@ -4,22 +4,35 @@ using UnityEngine;
 
 public class TankManager : MonoBehaviour
 {
-	private static GameObject[] tanks; 
-
 	private static TankManager instance = null;
 	public static TankManager Instance
 	{
 		get
 		{
-			if(instance == null)
-			{
-				instance = new GameObject("TankManager").AddComponent<TankManager>();
-			}
 			return instance;
 		}
 	}
 
-	public static void PlayerStart()
+	private GameObject[] tanks;
+	
+	public Tank GetTank(int tankID)
+	{
+		return tanks[tankID].GetComponent<Tank>();
+	}
+
+	void Awake()
+	{
+		instance = this;
+	}
+
+	void Start()
+	{
+		Invoke("PlayerStart", 1.0f);
+		//随便调用一个方法，用于激活
+		TankModel.Instance.ToString();
+	}
+
+	public void PlayerStart()
 	{
 		Transform playerStartTrans = GameObject.FindWithTag("PlayerStart").transform;
 
@@ -58,4 +71,34 @@ public class TankManager : MonoBehaviour
 
 
 	}
+
+	void OnDrawGizmos()
+	{
+		//x red
+		Gizmos.color = Color.red;
+		for(int i = 1; i <= 4; i++)
+		{
+			Transform trans = transform.Find("PlayerStart" + i);
+			Gizmos.DrawLine(trans.position, trans.position + 10 * trans.right);
+		}
+
+		//y green
+		Gizmos.color = Color.green;
+		for (int i = 1; i <= 4; i++)
+		{
+			Transform trans = transform.Find("PlayerStart" + i);
+			Gizmos.DrawLine(trans.position, trans.position + 10 * trans.up);
+		}
+
+
+		//z blue
+		Gizmos.color = Color.blue;
+		for (int i = 1; i <= 4; i++)
+		{
+			Transform trans = transform.Find("PlayerStart" + i);
+			Gizmos.DrawLine(trans.position, trans.position + 10 * trans.forward);
+		}
+	}
+
+
 }

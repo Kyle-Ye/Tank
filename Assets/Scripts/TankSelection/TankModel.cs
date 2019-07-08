@@ -12,7 +12,8 @@ public class TankModel : MonoBehaviour
         {
             if(instance == null)
             {
-                instance = new TankModel();
+				instance = new GameObject("TankInfe").AddComponent<TankModel>();
+				DontDestroyOnLoad(instance.gameObject);
             }
             return instance;
         }

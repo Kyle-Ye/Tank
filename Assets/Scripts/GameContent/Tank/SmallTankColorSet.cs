@@ -6,10 +6,6 @@ using UnityEngine;
 public class SmallTankColorSet : TankColorSet
 {
 
-	/// <summary>
-	/// 根据传入的玩家ID决定坦克的外观
-	/// </summary>
-	/// <param name="playerNumber"></param>玩家ID
 	public override void SetColor(int playerNumber)
 	{
 		Color color = Color.red;

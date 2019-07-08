@@ -31,9 +31,13 @@ public class Bullet : MonoBehaviour
 			return;
 		}
 
+		//发射坐标
+		Vector3 ePos = Vector3.Scale(tank.GetComponent<Tank>().EmissionPosition, tank.transform.localScale);
+		ePos = tank.transform.rotation * ePos;
+
 		GameObject instance =
 			Instantiate<GameObject>(bullet,
-									Vector3.Scale(tank.GetComponent<Tank>().EmissionPosition, tank.transform.localScale) + tank.transform.position,
+									ePos + tank.transform.position,
 									tank.transform.rotation
 				);
 
