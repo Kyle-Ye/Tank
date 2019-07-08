@@ -26,8 +26,12 @@ public class SpeciallTankColorSet : TankColorSet
                 renderer = Resources.Load<GameObject>("Models/Tank/SpecialTank/special_tank_green");
                 break;
         }
+        renderer = Instantiate<GameObject>(renderer, transform);
+        renderer.transform.position = transform.Find("TankRenderers").position;
+        renderer.transform.rotation = transform.Find("TankRenderers").rotation;
+        renderer.transform.localScale = transform.Find("TankRenderers").localScale;
         Destroy(transform.Find("TankRenderers").gameObject);
-        Instantiate<GameObject>(renderer, transform).name = "TankRenderers";
+        renderer.name = "TankRenderers";
 
     }
 }
