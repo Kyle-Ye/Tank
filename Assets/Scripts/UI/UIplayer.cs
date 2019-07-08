@@ -46,7 +46,7 @@ public class UIplayer : MonoBehaviour
             oilSlider.value = oil / 100.0f;
         }
 
-       
+        itemImage.sprite = tankInfo.GetItemSprite();
     }
 
 
