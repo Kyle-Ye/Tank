@@ -7,9 +7,6 @@ TagManager:
   - PlayerStart
   - Celection
   - floor
-  - Bullet
-  - Tank
-  - Item
   layers:
   - Default
   - TransparentFX
