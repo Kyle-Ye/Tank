@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     }
     public int tankModel;
     public static int _tankId;
+    public static TankModel.tankType tanktype;
     void Start()
     {
         

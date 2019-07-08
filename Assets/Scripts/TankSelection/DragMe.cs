@@ -8,9 +8,21 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 {
 	public bool dragOnSurfaces = true;
     public int tankId;
+    public TankModel.tankType itemType;
 	
 	private Dictionary<int,GameObject> m_DraggingIcons = new Dictionary<int, GameObject>();
 	private Dictionary<int, RectTransform> m_DraggingPlanes = new Dictionary<int, RectTransform>();
+
+
+    void Start()
+    {
+        switch (tankId)
+        {
+            case 1: itemType = TankModel.tankType.small;break;
+            case 2: itemType = TankModel.tankType.middle;break;
+            case 3: itemType = TankModel.tankType.big;break;
+        }
+    }
 
 	public void OnBeginDrag(PointerEventData eventData)
 	{
@@ -34,7 +46,8 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 		image.sprite = GetComponent<Image>().sprite;
         RectTransform iconImage = m_DraggingIcons[eventData.pointerId].GetComponent<RectTransform>();
         iconImage.sizeDelta = new Vector2(128F, 128F);
-        GameManager._tankId = tankId;
+        //GameManager._tankId = tankId;
+        GameManager.tanktype = itemType;
 		//image.SetNativeSize();
         
 		
