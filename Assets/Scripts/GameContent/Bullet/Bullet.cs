@@ -22,12 +22,12 @@ public class Bullet : MonoBehaviour
 	{
 		if(!bullet.CompareTag("Bullet"))
 		{
-			Debug.LogError("试图将一个非bullet的Gameobject当初bullet");
+			Debug.LogError("试图将一个非bullet的Gameobject当作bullet");
 			return;
 		}
 		if (!tank.CompareTag("Tank"))
 		{
-			Debug.LogError("试图将一个非tank的Gameobject当初tank");
+			Debug.LogError("试图将一个非tank的Gameobject当作tank");
 			return;
 		}
 
