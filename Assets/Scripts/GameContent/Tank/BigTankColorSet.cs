@@ -10,7 +10,7 @@ public class BigTankColorSet : TankColorSet
 
 	public override void SetColor(int playerNumber)
 	{
-		GameObject renderer;
+		GameObject renderer = null;
 		switch (playerNumber)
 		{
 			case 1:
@@ -26,5 +26,8 @@ public class BigTankColorSet : TankColorSet
 				renderer = Resources.Load<GameObject>("Models/Tank/BigTank/tank_green");
 				break;
 		}
+		Destroy(transform.Find("TankRenderers").gameObject);
+		Instantiate<GameObject>(renderer, transform).name = "TankRenderers";
+		
 	}
 }

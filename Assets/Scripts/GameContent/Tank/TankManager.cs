@@ -40,7 +40,7 @@ public class TankManager : MonoBehaviour
 		tanks = new GameObject[5];
 		for (int i = 1; i <= 4; i++)
 		{
-			tankPrepares[i] = TankModel.Instance.TankList[i];
+			tankPrepares[i] = TankModel.TankList[i];
 
 			GameObject tank = null;
 			switch (tankPrepares[i].tanktype)
@@ -52,7 +52,7 @@ public class TankManager : MonoBehaviour
 					tank = Resources.Load<GameObject>("");
 					break;
 				case TankModel.tankType.big:
-					tank = Resources.Load<GameObject>("Prefabs/Tank/BigTank");
+					tank = Resources.Load<GameObject>("");
 					break;
 			}
 

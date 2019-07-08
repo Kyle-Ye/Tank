@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8450442679646633843}
   - component: {fileID: 2349893670461789223}
+  - component: {fileID: 3881665075659858829}
   - component: {fileID: 510724969724888890}
   - component: {fileID: 3314209391720425237}
   m_Layer: 0
@@ -55,9 +56,21 @@ MonoBehaviour:
   maxSpeed: 5
   maxAngleSpeed: 270
   attackCD: 3
-  bullet: {fileID: 0}
+  bullet: {fileID: 3174901467775763247, guid: e2890016fe6807444bd82ccbde7fa141, type: 3}
   colorObject: {fileID: 0}
-  emissionPosition: {x: 0, y: 0, z: 0}
+  emissionPosition: {x: 0, y: 1, z: 2}
+--- !u!114 &3881665075659858829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836119434298248544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353c246e277b2ae4ab2dfbeaf3ce64c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &510724969724888890
 Rigidbody:
   m_ObjectHideFlags: 0
