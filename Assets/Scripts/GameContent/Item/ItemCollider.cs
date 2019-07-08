@@ -5,16 +5,38 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
+
 public class ItemCollider : MonoBehaviour
 {
-	[SerializeField]
-	public Item item;
+	public enum ItemType
+	{
+		Wrench,
+		OilBottle,
+		Shileld,
+		Timer
+	}
+	ItemType itemType;
 
 	//发生碰撞，赋给玩家
 	void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.CompareTag("Player"))
 		{
+			Item item = null;
+			switch (itemType)
+			{
+				case ItemType.Wrench:
+					
+					break;
+				case ItemType.Timer:
+					break;
+				case ItemType.Shileld:
+					break;
+				case ItemType.OilBottle:
+					break;
+			}
+
+
 			other.gameObject.GetComponent<Tank>().item = item;
 		}
 	}
