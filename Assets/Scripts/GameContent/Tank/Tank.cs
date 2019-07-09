@@ -59,7 +59,7 @@ public class Tank : MonoBehaviour
 
 	#region 私有属性
 
-	private static int levelTankNum;		//场上剩余坦克数量
+	private static int levelTankNum = 4;		//场上剩余坦克数量
 
 	private int health;						//当前生命值
 	private float oil;						//当前油量
