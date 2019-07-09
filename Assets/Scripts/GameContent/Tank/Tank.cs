@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tank : MonoBehaviour
 {
@@ -195,12 +196,18 @@ public class Tank : MonoBehaviour
 
 	#endregion
 
-	public void Awake()
+	private static void OnSceneUnloaded(Scene current)
 	{
-		rb = GetComponent<Rigidbody>();
+		levelTankNum = 4;
 	}
 
-	public void Start()
+	void Awake()
+	{
+		rb = GetComponent<Rigidbody>();
+		SceneManager.sceneUnloaded += OnSceneUnloaded;
+	}
+
+	void Start()
 	{
 		if (!bullet.CompareTag("Bullet"))
 		{
