@@ -251,6 +251,12 @@ public class Tank : MonoBehaviour
 			armor_timeVal = 0;
 		}
 
+		//翻车检测
+		if(Vector3.Angle(Vector3.down,transform.up) < 30)
+		{
+			Die();
+		}
+
 	}
 
 	public void FixedUpdate()
