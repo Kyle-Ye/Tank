@@ -237,6 +237,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &758459592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758459594}
+  - component: {fileID: 758459593}
+  m_Layer: 0
+  m_Name: Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &758459593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758459592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 455ccb5925c59fe479d6d04aa123be7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &758459594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758459592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -223.39453, y: 240.38489, z: -88.58795}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &815285500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5353856646068514483, guid: 862089b63c160a94db1ef471d3631136,
@@ -376,6 +419,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 106.59723, y: 11.896666, z: 10.479996}
   m_Center: {x: 1.451355, y: 4.634852, z: -49.519016}
+--- !u!1 &1478866058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2942234932509623864, guid: 510ae34bcf7807248a098b6d03a53560,
+    type: 3}
+  m_PrefabInstance: {fileID: 1269413206826678371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1549154282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,7 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ef1ad92aa47fc48963e40a23983910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndCanvas: {fileID: 1269413206826678388}
+  EndCanvas: {fileID: 1478866058}
 --- !u!1 &1955978666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7605644806001989737, guid: 862089b63c160a94db1ef471d3631136,
@@ -1750,6 +1799,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 234037831436541708, guid: 510ae34bcf7807248a098b6d03a53560,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 510ae34bcf7807248a098b6d03a53560, type: 3}
 --- !u!1 &1269413206826678372 stripped
@@ -1774,7 +1828,7 @@ MonoBehaviour:
   bloodSlider: {fileID: 1269413206826678383}
   oilSlider: {fileID: 1269413206826678384}
   itemImage: {fileID: 684749253}
-  DeadSprite: {fileID: 21300000, guid: 564ca1e81fe8d5d4ab0b192d6c8083f5, type: 3}
+  DeadSprite: {fileID: 21300000, guid: 1725a59c740b9e14898c1bf912a08f0b, type: 3}
 --- !u!114 &1269413206826678374 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6139810331261520652, guid: 510ae34bcf7807248a098b6d03a53560,
@@ -1905,7 +1959,7 @@ MonoBehaviour:
   bloodSlider: {fileID: 1269413206826678374}
   oilSlider: {fileID: 1269413206826678375}
   itemImage: {fileID: 1771668239}
-  DeadSprite: {fileID: 21300000, guid: 564ca1e81fe8d5d4ab0b192d6c8083f5, type: 3}
+  DeadSprite: {fileID: 21300000, guid: 1725a59c740b9e14898c1bf912a08f0b, type: 3}
 --- !u!114 &1269413206826678386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1922,7 +1976,7 @@ MonoBehaviour:
   bloodSlider: {fileID: 1269413206826678377}
   oilSlider: {fileID: 1269413206826678378}
   itemImage: {fileID: 1728242532}
-  DeadSprite: {fileID: 21300000, guid: 564ca1e81fe8d5d4ab0b192d6c8083f5, type: 3}
+  DeadSprite: {fileID: 21300000, guid: 1725a59c740b9e14898c1bf912a08f0b, type: 3}
 --- !u!114 &1269413206826678387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1939,10 +1993,4 @@ MonoBehaviour:
   bloodSlider: {fileID: 1269413206826678380}
   oilSlider: {fileID: 1269413206826678381}
   itemImage: {fileID: 110411602}
-  DeadSprite: {fileID: 21300000, guid: 564ca1e81fe8d5d4ab0b192d6c8083f5, type: 3}
---- !u!1 &1269413206826678388 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1899192936, guid: 510ae34bcf7807248a098b6d03a53560,
-    type: 3}
-  m_PrefabInstance: {fileID: 1269413206826678371}
-  m_PrefabAsset: {fileID: 0}
+  DeadSprite: {fileID: 21300000, guid: 1725a59c740b9e14898c1bf912a08f0b, type: 3}

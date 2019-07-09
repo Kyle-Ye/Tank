@@ -177,8 +177,12 @@ public class Tank : MonoBehaviour
 
 	public void UseItem()
 	{
-		item.Use(this);
-		item = null;
+        if (item != null)
+        {
+            item.Use(this);
+            item = null;
+        }
+		
 	}
 
 	public Sprite GetItemSprite()

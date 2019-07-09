@@ -39,7 +39,7 @@ public class UIplayer : MonoBehaviour
                 }
                 else 
                 {
-                    itemImage.sprite = tankInfo.GetItemSprite();
+                    itemImage.sprite = DeadSprite;
                     numberGet = true;
                 }
             }
@@ -59,6 +59,7 @@ public class UIplayer : MonoBehaviour
             bloodSlider.value = blood / 100.0f;
             oilSlider.value = oil / 100.0f;
         }
+
 
 
     }

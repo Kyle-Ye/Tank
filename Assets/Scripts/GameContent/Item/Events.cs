@@ -19,7 +19,7 @@ public class Events : MonoBehaviour
     {
         timeVal += Time.deltaTime;
         
-        if(timeVal >= 5.0f)
+        if(timeVal >= 15.0f)
         {
             eventNum = Random.Range(1, 3);
             switch (eventNum)
@@ -56,7 +56,7 @@ public class Events : MonoBehaviour
     IEnumerator BeOpposite()
     {
         TankUserController.isOpposite = true;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         TankUserController.isOpposite = false;
         Debug.Log(2);
     }
