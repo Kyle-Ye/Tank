@@ -271,14 +271,7 @@ public class Tank : MonoBehaviour
 		}
 
 		//翻车检测
-
-		if (Vector3.Angle(Vector3.down, transform.up) <= 90)
-		{
-			Vector3 v = Vector3.Cross(transform.up * rb.mass, Vector3.down);
-			rb.AddForceAtPosition(transform.up, transform.position + Vector3.up);
-		}
-
-		if (Vector3.Angle(Vector3.down,transform.up) < 30)
+		if (Vector3.Angle(Vector3.down,transform.up) <= 90)
 		{
 			Die();
 		}
