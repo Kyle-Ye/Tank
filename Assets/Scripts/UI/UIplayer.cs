@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class UIplayer : MonoBehaviour
 {
 	public static bool canGet = false;
+    
 
-	public int tankId;
+    public int tankId;
     private Tank tankInfo;
     public Slider bloodSlider, oilSlider;
     public Image itemImage;
@@ -15,7 +16,8 @@ public class UIplayer : MonoBehaviour
     private float oil;
     private bool numberGet = false;
     private bool refreshNumber = false;
-    
+    public Sprite DeadSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +31,11 @@ public class UIplayer : MonoBehaviour
 		if(canGet)
 		{
 			if (tankInfo = TankManager.Instance.GetTank(tankId))
-                itemImage.sprite = tankInfo.GetItemSprite();
-				numberGet = true;
+                if (tankInfo.IsDead()==false)
+                {
+                    itemImage.sprite = tankInfo.GetItemSprite();
+                    numberGet = true;
+                }             
 		}
 
         if (numberGet)
@@ -47,7 +52,10 @@ public class UIplayer : MonoBehaviour
             oilSlider.value = oil / 100.0f;
         }
 
-        
+        if (tankInfo.IsDead())
+        {
+            itemImage.sprite = DeadSprite;
+        }
     }
 
 

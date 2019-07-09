@@ -59,6 +59,8 @@ public class Tank : MonoBehaviour
 
 	#region 私有属性
 
+	private static int levelTankNum;		//场上剩余坦克数量
+
 	private int health;						//当前生命值
 	private float oil;						//当前油量
 	private float speed;					//当前车速
@@ -71,9 +73,16 @@ public class Tank : MonoBehaviour
 	private float speed_timeVal = 0.0f;     //加速BUFF计时器
 	private float armor_timeVal = 0.0f;     //护盾计时器
 
+	private Rigidbody rb;
+
 	#endregion
 
 	#region 基础对外接口
+
+	public static bool IsGameOver()
+	{
+		return (levelTankNum <= 1);
+	}
 
 	//坦克受到攻击
 	public void Damage(float damage)
@@ -150,6 +159,14 @@ public class Tank : MonoBehaviour
 		return maxOil;
 	}
 
+	public bool IsDead()
+	{
+		if (health <= 0)
+			return true;
+		else
+			return false;
+	}
+
 	#endregion
 
 	#region 道具相关
@@ -180,7 +197,7 @@ public class Tank : MonoBehaviour
 
 	public void Awake()
 	{
-
+		rb = GetComponent<Rigidbody>();
 	}
 
 	public void Start()
@@ -193,6 +210,8 @@ public class Tank : MonoBehaviour
 
 		health = maxHealth;
 		oil = maxOil;
+
+		levelTankNum = 4;
 	}
 
 	public void Update()
@@ -252,10 +271,12 @@ public class Tank : MonoBehaviour
 		}
 
 		//翻车检测
-		if(Vector3.Angle(Vector3.down,transform.up) < 90)
+		if (Vector3.Angle(Vector3.down,transform.up) <= 90)
 		{
 			Die();
 		}
+
+		
 
 	}
 
@@ -342,6 +363,9 @@ public class Tank : MonoBehaviour
 		oil = 0;
 		health = 0;
 		gameObject.SetActive(false);
+
+		levelTankNum--;
+
 	}
 
 
