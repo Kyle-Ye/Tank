@@ -1042,6 +1042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ef1ad92aa47fc48963e40a23983910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndCanvas: {fileID: 1269413206826678388}
 --- !u!1 &1955978666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7605644806001989737, guid: 862089b63c160a94db1ef471d3631136,
@@ -1773,6 +1774,7 @@ MonoBehaviour:
   bloodSlider: {fileID: 1269413206826678383}
   oilSlider: {fileID: 1269413206826678384}
   itemImage: {fileID: 684749253}
+  DeadSprite: {fileID: 21300000, guid: 564ca1e81fe8d5d4ab0b192d6c8083f5, type: 3}
 --- !u!114 &1269413206826678374 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6139810331261520652, guid: 510ae34bcf7807248a098b6d03a53560,
@@ -1903,6 +1905,7 @@ MonoBehaviour:
   bloodSlider: {fileID: 1269413206826678374}
   oilSlider: {fileID: 1269413206826678375}
   itemImage: {fileID: 1771668239}
+  DeadSprite: {fileID: 21300000, guid: 564ca1e81fe8d5d4ab0b192d6c8083f5, type: 3}
 --- !u!114 &1269413206826678386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,6 +1922,7 @@ MonoBehaviour:
   bloodSlider: {fileID: 1269413206826678377}
   oilSlider: {fileID: 1269413206826678378}
   itemImage: {fileID: 1728242532}
+  DeadSprite: {fileID: 21300000, guid: 564ca1e81fe8d5d4ab0b192d6c8083f5, type: 3}
 --- !u!114 &1269413206826678387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1935,3 +1939,10 @@ MonoBehaviour:
   bloodSlider: {fileID: 1269413206826678380}
   oilSlider: {fileID: 1269413206826678381}
   itemImage: {fileID: 110411602}
+  DeadSprite: {fileID: 21300000, guid: 564ca1e81fe8d5d4ab0b192d6c8083f5, type: 3}
+--- !u!1 &1269413206826678388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1899192936, guid: 510ae34bcf7807248a098b6d03a53560,
+    type: 3}
+  m_PrefabInstance: {fileID: 1269413206826678371}
+  m_PrefabAsset: {fileID: 0}

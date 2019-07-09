@@ -5,9 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class ReturnMenu : MonoBehaviour
 {
-    public void Back()
+    public GameObject EndCanvas;
+    public void Back()    
     {
         Debug.Log("cnm");
         Application.Quit();
+    }
+
+    public void Update()
+    {
+        if(Tank.IsGameOver())
+        {
+            EndCanvas.SetActive(true);
+        }
+        else
+        {
+            EndCanvas.SetActive(false);
+        }
     }
 }

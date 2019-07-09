@@ -31,11 +31,19 @@ public class UIplayer : MonoBehaviour
 		if(canGet)
 		{
 			if (tankInfo = TankManager.Instance.GetTank(tankId))
-                if (tankInfo.IsDead()==false)
+            {
+                if (tankInfo.IsDead() == false)
                 {
                     itemImage.sprite = tankInfo.GetItemSprite();
                     numberGet = true;
-                }             
+                }
+                else 
+                {
+                    itemImage.sprite = tankInfo.GetItemSprite();
+                    numberGet = true;
+                }
+            }
+               
 		}
 
         if (numberGet)
@@ -52,10 +60,7 @@ public class UIplayer : MonoBehaviour
             oilSlider.value = oil / 100.0f;
         }
 
-        if (tankInfo.IsDead())
-        {
-            itemImage.sprite = DeadSprite;
-        }
+
     }
 
 
