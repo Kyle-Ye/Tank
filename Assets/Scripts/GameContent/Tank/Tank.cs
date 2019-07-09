@@ -59,6 +59,8 @@ public class Tank : MonoBehaviour
 
 	#region 私有属性
 
+	private static int levelTankNum;		//场上剩余坦克数量
+
 	private int health;						//当前生命值
 	private float oil;						//当前油量
 	private float speed;					//当前车速
@@ -76,6 +78,11 @@ public class Tank : MonoBehaviour
 	#endregion
 
 	#region 基础对外接口
+
+	public static bool IsGameOver()
+	{
+		return (levelTankNum <= 1);
+	}
 
 	//坦克受到攻击
 	public void Damage(float damage)
@@ -203,6 +210,8 @@ public class Tank : MonoBehaviour
 
 		health = maxHealth;
 		oil = maxOil;
+
+		levelTankNum = 4;
 	}
 
 	public void Update()
@@ -361,6 +370,9 @@ public class Tank : MonoBehaviour
 		oil = 0;
 		health = 0;
 		gameObject.SetActive(false);
+
+		levelTankNum--;
+
 	}
 
 
