@@ -252,7 +252,7 @@ public class Tank : MonoBehaviour
 		}
 
 		//翻车检测
-		if(Vector3.Angle(Vector3.down,transform.up) < 60)
+		if(Vector3.Angle(Vector3.down,transform.up) < 90)
 		{
 			Die();
 		}
