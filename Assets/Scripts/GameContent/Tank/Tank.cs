@@ -152,6 +152,14 @@ public class Tank : MonoBehaviour
 		return maxOil;
 	}
 
+	public bool IsDead()
+	{
+		if (health <= 0)
+			return true;
+		else
+			return false;
+	}
+
 	#endregion
 
 	#region 道具相关
