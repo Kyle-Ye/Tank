@@ -71,7 +71,7 @@ public class Tank : MonoBehaviour
 	private float speed_timeVal = 0.0f;     //加速BUFF计时器
 	private float armor_timeVal = 0.0f;     //护盾计时器
 
-	private Rigidbody rigidbody;
+	private Rigidbody rb;
 
 	#endregion
 
@@ -182,7 +182,7 @@ public class Tank : MonoBehaviour
 
 	public void Awake()
 	{
-		rigidbody = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody>();
 	}
 
 	public void Start()
@@ -257,8 +257,8 @@ public class Tank : MonoBehaviour
 
 		if (Vector3.Angle(Vector3.down, transform.up) <= 90)
 		{
-			Vector3 v = Vector3.Cross(transform.up * rigidbody.mass, Vector3.down);
-			rigidbody.AddForceAtPosition(transform.up, transform.position + Vector3.up);
+			Vector3 v = Vector3.Cross(transform.up * rb.mass, Vector3.down);
+			rb.AddForceAtPosition(transform.up, transform.position + Vector3.up);
 		}
 
 		if (Vector3.Angle(Vector3.down,transform.up) < 30)
