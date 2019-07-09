@@ -12,7 +12,7 @@ public class OilBottle : Item
 
     public override void Use(Tank tank)
     {
-        tank.SetOil(30);//这里写让tank血量恢复的代码
+        tank.SetOil(50);//这里写让tank血量恢复的代码
                            //玩家索引是传入的参数
                            //tank.SetOil()之类的
     }
