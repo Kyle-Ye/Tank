@@ -6,7 +6,9 @@ public class Events : MonoBehaviour
 {
 
     private float timeVal = 0;
+    private float time = 1,t = 0;
     private int eventNum;
+    public GameObject opposite, decrease;
     private Tank tank1, tank2, tank3,tank4;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class Events : MonoBehaviour
     void Update()
     {
         timeVal += Time.deltaTime;
+        
         
         if(timeVal >= 15.0f)
         {
@@ -42,6 +45,7 @@ public class Events : MonoBehaviour
 
     public void OilBeHalf()
     {
+        
         //float oil1 = tank1.GetOil();
         tank1.SetOil(-30);
         //float oil2 = tank2.GetOil();
