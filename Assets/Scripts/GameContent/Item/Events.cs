@@ -5,7 +5,7 @@ using UnityEngine;
 public class Events : MonoBehaviour
 {
 
-    private float timeVal = 0;
+	private float timeVal = 0;
     private float time = 1,t = 0;
     private int eventNum;
     public GameObject opposite, decrease;
@@ -27,7 +27,7 @@ public class Events : MonoBehaviour
             eventNum = Random.Range(1, 3);
             switch (eventNum)
             {
-                case 1: OilBeHalf();break;
+                case 1: StartCoroutine(OilBeHalf());break;
                 case 2: StartCoroutine(BeOpposite()) ; break;
             }
             
@@ -43,27 +43,32 @@ public class Events : MonoBehaviour
         }
     }
 
-    public void OilBeHalf()
+    IEnumerator OilBeHalf()
     {
-        
-        //float oil1 = tank1.GetOil();
-        tank1.SetOil(-30);
+		decrease.SetActive(true);
+		//float oil1 = tank1.GetOil();
+		tank1.SetOil(-30);
         //float oil2 = tank2.GetOil();
         tank2.SetOil(-30);
         //float oil3 = tank3.GetOil();
         tank3.SetOil(-30);
         //float oil4 = tank4.GetOil();
         tank4.SetOil(-30);
-        Debug.Log(1);
-    }
+
+		yield return new WaitForSeconds(1);
+		decrease.SetActive(false);
+
+	}
 
     IEnumerator BeOpposite()
     {
+		opposite.SetActive(true);
         TankUserController.isOpposite = true;
         yield return new WaitForSeconds(5);
         TankUserController.isOpposite = false;
         Debug.Log(2);
-    }
+		opposite.SetActive(false);
+	}
 
 
 }
