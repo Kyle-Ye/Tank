@@ -6146,12 +6146,12 @@ MonoBehaviour:
   maxHealth: 100
   maxOil: 100
   moveOilWear: 2
-  oilRegenerateSpeed: 0.2
-  armor: 1
-  damage: 50
+  oilRegenerateSpeed: 0.5
+  armor: 3
+  damage: 60
   maxSpeed: 5
-  maxAngleSpeed: 360
-  attackCD: 3
+  maxAngleSpeed: 180
+  attackCD: 2
   bullet: {fileID: 3174901467775763247, guid: e2890016fe6807444bd82ccbde7fa141, type: 3}
   colorObject: {fileID: 0}
   emissionPosition: {x: 0.01, y: 0.085, z: 0.228}

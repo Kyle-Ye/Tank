@@ -855,6 +855,7 @@ GameObject:
   - component: {fileID: 1926985670}
   - component: {fileID: 1926985669}
   - component: {fileID: 1926985672}
+  - component: {fileID: 1926985673}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -949,6 +950,18 @@ MonoBehaviour:
   minItemNumber: 3
   maxItemNumber: 8
   Y: 3
+--- !u!114 &1926985673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926985668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ef1ad92aa47fc48963e40a23983910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1955978666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7605644806001989737, guid: 862089b63c160a94db1ef471d3631136,
@@ -1618,6 +1631,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469269622, guid: 510ae34bcf7807248a098b6d03a53560, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1926985673}
+    - target: {fileID: 469269622, guid: 510ae34bcf7807248a098b6d03a53560, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Back
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 510ae34bcf7807248a098b6d03a53560, type: 3}

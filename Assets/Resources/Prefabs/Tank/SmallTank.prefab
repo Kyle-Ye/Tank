@@ -210,14 +210,13 @@ MonoBehaviour:
   moveOilWear: 1
   oilRegenerateSpeed: 0.4
   armor: 1
-  damage: 50
-  maxSpeed: 10
+  damage: 40
+  maxSpeed: 15
   maxAngleSpeed: 360
-  attackCD: 3
+  attackCD: 2
   bullet: {fileID: 3174901467775763247, guid: e2890016fe6807444bd82ccbde7fa141, type: 3}
   colorObject: {fileID: 0}
   emissionPosition: {x: 0, y: 1.5, z: 1.5}
-  item: {fileID: 0}
 --- !u!114 &1019063031421026682
 MonoBehaviour:
   m_ObjectHideFlags: 0

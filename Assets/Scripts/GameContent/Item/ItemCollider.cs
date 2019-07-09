@@ -48,4 +48,9 @@ public class ItemCollider : MonoBehaviour
 		}
 	}
 
+	void Update()
+	{
+		transform.Rotate(0, 360 * Time.deltaTime, 0);
+	}
+
 }
