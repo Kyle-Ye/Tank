@@ -69,7 +69,7 @@ public class ItemFactory : MonoBehaviour
 					pos.z = UnityEngine.Random.Range(-50, 50);
 					pos.y = Y;
 
-					Collider[] colliders = Physics.OverlapSphere(pos, 20);
+					Collider[] colliders = Physics.OverlapSphere(pos, 10);
 					foreach (var o in colliders)
 					{
 						if (!o.gameObject.CompareTag("floor"))
